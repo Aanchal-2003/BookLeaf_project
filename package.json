@@ -1,0 +1,30 @@
+{
+  "name": "bookleaf-author-support-portal",
+  "version": "1.0.0",
+  "description": "Full-stack MERN Author Support & Communication Portal for BookLeaf Publishing",
+  "private": true,
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "install:all": "npm install --prefix server && npm install --prefix client",
+    "dev": "concurrently -n \"SERVER,CLIENT\" -c \"blue,magenta\" \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "start": "concurrently -n \"SERVER,CLIENT\" -c \"blue,magenta\" \"npm run start --prefix server\" \"npm run start --prefix client\"",
+    "build": "npm run build --prefix client",
+    "seed": "npm run seed --prefix server",
+    "test": "npm run test --prefix server"
+  },
+  "keywords": [
+    "mern",
+    "bookleaf",
+    "publishing",
+    "author-support",
+    "ai-support-portal"
+  ],
+  "author": "BookLeaf Engineering",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "concurrently": "^10.0.6"
+  }
+}
